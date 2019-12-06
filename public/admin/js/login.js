@@ -12,32 +12,32 @@ $(function() {
           // 非空的规则
           notEmpty: {
             // 提示消息
-            message: '用户名不能为空'
+            message: "用户名不能为空"
           },
           // 判断长度
           stringLength: {
             min: 3,
             max: 12,
-            message: '用户名长度必须是3-12位'
+            message: "用户名长度必须是3-12位"
           },
           // 没有任何的规则
           callback: {
-            message: '用户名错误'
+            message: "用户名错误"
           }
         }
       },
       password: {
         validators: {
           notEmpty: {
-            message: '密码不能为空'
+            message: "密码不能为空"
           },
           stringLength: {
             min: 6,
             max: 12,
-            message: '用户密码长度必须是6-12位'
+            message: "用户密码长度必须是6-12位"
           },
           callback: {
-            message: '密码错误'
+            message: "密码错误"
           }
         }
       }
@@ -45,13 +45,13 @@ $(function() {
     // 用于指定校验的反馈图标
     feedbackIcons: {
       // 校验通过的图标
-      valid: 'glyphicon glyphicon-thumbs-up',
+      valid: "glyphicon glyphicon-ok-circle",
       // 校验失败的图标
-      invalid: 'glyphicon glyphicon-thumbs-down',
+      invalid: "glyphicon glyphicon-remove-circle",
       // 正在校验的图标
-      validating: 'glyphicon glyphicon-refresh'
-    },
-  })
+      validating: "glyphicon glyphicon-repeat"
+    }
+  });
 
 
   // 2. 表单的重置功能
