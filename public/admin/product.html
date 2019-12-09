@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>丢人后台商品</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="lib/bootstrap-validator/css/bootstrapValidator.css">
+    <link rel="stylesheet" href="lib/nprogress/nprogress.css">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+
+<body style="height: 2000px;">
+    <div class="aside">
+        <!-- 标题 -->
+        <a class="title" href="index.html">黑马56期</a>
+        <!-- 个人信息 -->
+        <div class="info">
+            <img src="images/default.png" alt="">
+            <p>超级管理员</p>
+        </div>
+        <!-- 导航 -->
+        <div class="nav">
+            <ul>
+                <li>
+                    <a href="user.html">
+                        <span class="glyphicon glyphicon-user"></span>
+                        <span>用户管理</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;" class="category">
+                        <span class="glyphicon glyphicon-list"></span>
+                        <span>分类管理</span>
+                    </a>
+                    <!-- 二级菜单 -->
+                    <div class="second" style="display: none;">
+                        <a href="first.html">一级分类</a>
+                        <a href="second.html">二级分类</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="product.html">
+                        <span class="glyphicon glyphicon-tags"></span>
+                        <span>商品管理</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="content">
+        <div class="topBar">
+            <a href="javascript:;" class="pull-left"><span
+                    class="glyphicon glyphicon-align-justify btn-aside"></span></a>
+            <a href="javascript:;" class="pull-right"><span class="glyphicon glyphicon-log-out btn-logout"></span></a>
+        </div>
+        <div class="main">
+            <!-- 面包屑 -->
+            <ol class="breadcrumb">
+                <li><a href="index.html">管理系统</a></li>
+                <li>商品管理</li>
+            </ol>
+
+            <button class="btn btn-default btn-add">添加商品</button>
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>商品名称</th>
+                        <th>商品描述</th>
+                        <th>商品库存</th>
+                        <th>商品尺码</th>
+                        <th>商品状态</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                </tbody>
+            </table>
+            <ul id="page"></ul>
+        </div>
+    </div>
+    <div class="modal fade logoutModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">温馨提示</h4>
+                </div>
+                <div class="modal-body">
+                    <p class="text-danger"><span class="glyphicon glyphicon-info-sign"></span>你确定要退出本系统吗?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary btn-sure">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade addModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">添加分类</h4>
+                </div>
+                <form>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <input type="text" name="brandId" class="hidden">
+                            <div class="dropdown">
+                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    <span class="text">请选择二级分类</span>
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="proName" placeholder="请输入商品名称">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" rows="3" placeholder="请输入商品描述" name="proDesc"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="num" placeholder="请输入商品库存">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="size" placeholder="请输入商品尺码">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="oldPrice" placeholder="请输入商品原价">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="price" placeholder="请输入商品现价">
+                        </div>
+                        <div class="form-group">
+                            <label for="file" class="btn btn-default">上传图片</label>
+                            <input type="file" multiple id="file" name="pic1" data-url="/product/addProductPic"
+                                class="hidden">
+                        </div>
+                        <div class="form-group img_box">
+                            <input type="text" name="picArr" class="hidden">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button type="submit" class="btn btn-primary">确定</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/html" id="tpl">
+        {{each rows v i}}
+        <tr>
+          <td>{{ (page-1) * size + i + 1 }}</td>
+          <td>{{v.proName}}</td>
+          <td>{{v.proDesc}}</td>
+          <td>{{v.num}}</td>
+          <td>{{v.size}}</td>
+          <td>{{v.statu === 1 ? '已上架': '已下架'}}</td>
+          <td>
+            <button class="btn btn-danger">下架</button>
+          </td>
+        </tr>
+        {{/each}}
+      </script>
+
+    <script type="text/html" id="tpl2">
+        {{each rows v i}}
+        <li><a href="#" data-id="{{v.id}}">{{v.brandName}}</a></li>
+        {{/each}}
+      </script>
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+    <script src="lib/nprogress/nprogress.js"></script>
+    <script src="lib/artTemplate/template-web.js"></script>
+    <script src="lib/bootstrap-paginator/bootstrap-paginator.js"></script>
+    <script src="lib/bootstrap-validator/js/bootstrapValidator.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/first.js"></script>
+</body>
+
+</html>
