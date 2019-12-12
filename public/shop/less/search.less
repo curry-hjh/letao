@@ -1,0 +1,50 @@
+.lt_content {
+  background-color: #fff;
+  .search {
+    padding: 10px;
+    position: relative;
+    input {
+      height: 33px;
+      font-size: 12px;
+      border: 1px solid #007aff;
+      border-radius: 5px;
+    }
+    button {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      border-radius: 0 5px 5px 0;
+    }
+  }
+  .history {
+    padding: 10px;
+    .title {
+      overflow: hidden;
+      font-size: 14px;
+    }
+    .tips {
+      color: #666;
+      font-size: 12px;
+    }
+    .content {
+      ul {
+        border: 1px dashed red;
+      }
+      li {
+        height: 30px;
+        line-height: 30px;
+        overflow: hidden;
+        padding: 0 10px;
+        font-size: 14px;
+        border-bottom: 1px dashed red;
+        &:last-child {
+          border-bottom: none;
+        }
+
+        .fa-times {
+          line-height: 30px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>丢人商城</title>
+    <link rel="stylesheet" href="lib/fa/css/font-awesome.css">
+    <link rel="stylesheet" href="lib/mui/css/mui.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/search.css">
+</head>
+
+<body>
+    <div class="lt_header">
+        <a href="index.html"><span class='fa fa-home'></span></a>
+        <h1>丢人在线</h1>
+        <a href="search.html"><span class="fa fa-search"></span></a>
+    </div>
+    <div class="lt_content">
+        <div class="mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <div class="search">
+                    <input type="text" placeholder="请输入搜索关键字">
+                    <button class="mui-btn mui-btn-primary btn-search">搜索</button>
+                </div>
+                <div class="history">
+                    <!-- 挖坑 -->
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="lt_footer">
+        <ul>
+            <li class="now">
+                <a href="index.html">
+                    <span class="fa fa-home"></span>
+                    <p>首页</p>
+                </a>
+            </li>
+            <li>
+                <a href="category.html">
+                    <span class="fa fa-bars"></span>
+                    <p>分类页</p>
+                </a>
+            </li>
+            <li>
+                <a href="cart.html">
+                    <span class="fa fa-shopping-cart"></span>
+                    <p>购物车</p>
+                </a>
+            </li>
+            <li>
+                <a href="user.html">
+                    <span class="fa fa-user"></span>
+                    <p>用户中心</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <script type='text/html' id='tpl'>
+     {{if rows.length === 0}}
+    <div class="tips">没有更多数据！！！</div>
+    {{else}}
+    <div class="title">
+        <span class="mui-pull-left">搜索历史</span>
+        <span class="mui-pull-right btn-clear"><i class="fa fa-trash"></i>清除记录</span>
+    </div>
+      <div class="content">
+      <ul>
+        {{each rows v i }}
+        <li>
+          <a href="searchList.html?key={{v}}" class="mui-pull-left">{{v}}</a>
+          <i class="fa fa-times mui-pull-right btn-delete" data-index="{{i}}"></i>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+    {{/if}}
+    </script>
+    <script src="lib/jquery/jquery.js"></script>
+    <script src="lib/artTemplate/template-web.js"></script>
+    <script src="lib/mui/js/mui.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/search.js"></script>
+</body>
+
+</html>
