@@ -1,0 +1,44 @@
+.lt_content {
+  display: flex;
+}
+.lt_content .left {
+  width: 90px;
+  position: relative;
+}
+.lt_content .left li {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background-color: #ccc;
+  border-bottom: 1px solid #333;
+  border-right: 1px solid #333;
+}
+.lt_content .left li.now {
+  background-color: #fff;
+  border-right: none;
+}
+.lt_content .right {
+  flex: 1;
+  background-color: #fff;
+  position: relative;
+}
+.lt_content .right ul {
+  overflow: hidden;
+}
+.lt_content .right ul li {
+  float: left;
+  width: 33.33%;
+}
+.lt_content .right ul li img {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+}
+.lt_content .right ul li p {
+  text-align: center;
+}
+.tips {
+  color: #666;
+  padding: 10px;
+}
