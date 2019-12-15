@@ -21,6 +21,16 @@
     transform: translate(-50%, -50%) rotate(360deg);
   }
 }
+.loading {
+  width: 40px;
+  height: 40px;
+  margin: 200px auto;
+  animation: rotate 1s infinite;
+}
+.loading span {
+  font-size: 40px;
+  color: green;
+}
 .mask {
   position: fixed;
   width: 100%;

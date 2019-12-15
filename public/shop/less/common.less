@@ -9,8 +9,7 @@ img {
   width: 100%;
 }
 
-html,
-body {
+html,body {
   height: 100%;
 }
 
@@ -18,48 +17,47 @@ body {
   padding-top: 45px;
   padding-bottom: 55px;
 }
+
 .lt_header {
+  height: 45px;
+  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 45px;
   background-color: #069;
   display: flex;
-  color: #fff;
-
-  a {
+  .icon_left,
+  .icon_right {
     width: 45px;
     text-align: center;
     line-height: 45px;
     color: #fff;
   }
-  h1 {
+  .title {
     flex: 1;
-    text-align: center;
-    font-weight: 400;
-    font-size: 26px;
-    line-height: 45px;
-    margin: 0;
+    h1 {
+      color: #fff;
+      font-size: 24px;
+      text-align: center;
+      font-weight: 400;
+      line-height: 45px;
+      margin: 0;
+    }
   }
 }
-.lt_content {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
+
 .lt_footer {
+  height: 55px;
+  width: 100%;
   position: fixed;
   bottom: 0;
   left: 0;
-  width: 100%;
-  height: 55px;
   background-color: #069;
   ul {
     display: flex;
     li {
-      flex: 1;
       padding-top: 8px;
+      flex: 1;
       text-align: center;
       a {
         color: #fff;
@@ -75,6 +73,62 @@ body {
           color: orange;
         }
       }
+    }
+  }
+}
+
+
+.lt_content {
+  // 区域滚动 iscroll
+  width: 100%;
+  height: 100%;
+  // background-color: pink;
+  position: relative;
+  background-color: #fff;
+}
+
+.search {
+  padding: 10px;
+  position: relative;
+
+  input {
+    height: 33px;
+    font-size: 12px;
+    border: 1px solid #007AFF;
+    border-radius: 5px;
+  }
+
+  button {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    border-radius: 0 5px 5px 0;
+  }
+}
+
+.products {
+  padding: 10px;
+  overflow: hidden;
+  background-color: #fff;
+  .product {
+    border: 1px solid #ccc;
+    padding: 10px;
+    float: left;
+    width: 48%;
+    margin-top: 15px;
+    text-align: center;
+
+    .price {
+      span:first-child {
+        color: red;
+      }
+      span:last-child {
+        color: #666;
+        text-decoration: line-through;
+      }
+    }
+    &:nth-child(2n+1) {
+      margin-right: 15px;
     }
   }
 }

@@ -1,0 +1,15 @@
+.item .mui-slider-handle {
+  display: flex;
+}
+.item .mui-slider-handle .left {
+  width: 60px;
+}
+.item .mui-slider-handle .right {
+  padding-left: 10px;
+  flex: 1;
+}
+.item .price span:nth-child(2) {
+  color: #666;
+  text-decoration: line-through;
+  font-size: 12px;
+}

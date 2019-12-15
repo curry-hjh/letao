@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>丢人商城</title>
+    <title>丢人在线</title>
     <link rel="stylesheet" href="lib/fa/css/font-awesome.css">
     <link rel="stylesheet" href="lib/mui/css/mui.css">
     <link rel="stylesheet" href="css/common.css">
@@ -14,22 +14,27 @@
 
 <body>
     <div class="lt_header">
+        <!-- 如何回到上一页 -->
         <a href="javascript:history.go(-1);" class="icon_left"><span class="fa fa-chevron-left"></span></a>
-        <h1>丢人在线</h1>
-        <a href="search.html"><span class="fa fa-search"></span></a>
+        <div class="title">
+            <h1>商品列表</h1>
+        </div>
     </div>
     <div class="lt_content">
         <div class="mui-scroll-wrapper">
             <div class="mui-scroll">
                 <div class="search">
-                    <input type="text" placeholder="请输入搜索关键字">
+                    <input type="text" placeholder="请输入搜索的关键字">
                     <button class="mui-btn mui-btn-primary btn-search">搜索</button>
                 </div>
 
+                <!-- 排序 -->
                 <div class="sort">
                     <ul>
-                        <li><span>上架时间</span>
-                            <i class="fa fa-angle-down"></i></li>
+                        <li>
+                            <span>上架时间</span>
+                            <i class="fa fa-angle-down"></i>
+                        </li>
                         <li data-name="price">
                             <span>价格</span>
                             <i class="fa fa-angle-down"></i>
@@ -44,16 +49,24 @@
                         </li>
                     </ul>
                 </div>
-                <div class="products">
 
+                <!-- 商品 -->
+                <div class="products">
+                    <!-- <div class="loading">
+            <span class="mui-icon mui-icon-spinner mui-spin"></span>
+          </div> -->
                 </div>
             </div>
         </div>
     </div>
 
+    <div class="mask">
+        <span class="mui-icon mui-icon-spinner mui-spin"></span>
+    </div>
+
     <div class="lt_footer">
         <ul>
-            <li class="now">
+            <li>
                 <a href="index.html">
                     <span class="fa fa-home"></span>
                     <p>首页</p>
@@ -79,6 +92,8 @@
             </li>
         </ul>
     </div>
+
+
     <script type="text/html" id="tpl">
     {{each data v i}}
     <a href="product.html?id={{v.id}}" class="product">
